@@ -7,16 +7,16 @@
           <InputText
             id="firstName"
             filled
-            v-model="personalInfo.firstName"
+            v-model="formData.firstName"
             required
             class="border rounded p-3"
           />
         </div>
         <div class="">
-          <label for="lastName" class="text-sm">Middle Name</label>
+          <label for="middleName" class="text-sm">Middle Name</label>
           <InputText
             id="middleName"
-            v-model="personalInfo.middleName"
+            v-model="formData.middleName"
             class="border rounded p-3"
           />
         </div>
@@ -24,7 +24,7 @@
           <label for="lastName" class="text-sm">Last Name</label>
           <InputText
             id="lastName"
-            v-model="personalInfo.lastName"
+            v-model="formData.lastName"
             required
             class="border rounded p-3"
           />
@@ -36,7 +36,7 @@
           <label for="email" class="text-sm">Email</label>
           <InputText
             id="email"
-            v-model="personalInfo.email"
+            v-model="formData.email"
             required
             class="border rounded p-3"
           />
@@ -45,7 +45,7 @@
           <label for="phone" class="text-sm">Phone Number</label>
           <InputText
             id="phone"
-            v-model="personalInfo.phone"
+            v-model="formData.phone"
             required
             class="border rounded p-3"
           />
@@ -54,7 +54,7 @@
           <label for="address" class="text-sm">Address</label>
           <InputText
             id="address"
-            v-model="personalInfo.address"
+            v-model="formData.address"
             class="border rounded p-3"
           />
         </div>
@@ -66,7 +66,7 @@
           <InputText
             type="date"
             id="dob"
-            v-model="personalInfo.dateOfBirth"
+            v-model="formData.dateOfBirth"
             required
             class="border rounded p-3"
           />
@@ -75,7 +75,7 @@
           <label for="nationality" class="text-sm">Nationality</label>
           <InputText
             id="nationality"
-            v-model="personalInfo.nationality"
+            v-model="formData.nationality"
             required
             class="border rounded p-3"
           />
@@ -84,7 +84,7 @@
           <label for="ethnicity" class="text-sm">Ethnicity</label>
           <InputText
             id="ethnicity"
-            v-model="personalInfo.ethnicity"
+            v-model="formData.ethnicity"
             required
             class="border rounded p-3"
           />
