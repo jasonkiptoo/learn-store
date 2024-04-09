@@ -68,9 +68,7 @@
                     </span>
 
                     <span class="font-weight-light ml-3">
-                      {{
-                        companyDetails.companyDetails.visaAllocations
-                      }}
+                      {{ companyDetails.companyDetails.visaAllocations }}
                       slots</span
                     >
                   </v-row>
@@ -270,13 +268,146 @@
         </v-expansion-panel>
       </v-expansion-panels>
     </v-card>
+
+    <v-card
+      variant="outlined"
+      max-width="1000"
+      class="text-center d-flex mx-auto justify-center"
+      :style="{
+        color: maxViolated ? 'red' : 'black',
+        animation: maxViolated ? 'blinking 1s 3' : 'none',
+      }"
+    >
+      <div class="error" style="color: red">{{ errorMessage }}</div>
+      <div class="bbtn">
+        <v-btn @click="checkMax()" variant="outlined"> Check </v-btn>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th class="text-left">Role</th>
+            <th>Minimum</th>
+            <th>Maximum</th>
+          </tr>
+        </thead>
+        <tbody v-for="item in getZoneData().roles">
+          <tr>
+            <td class="font-weight-bold">{{ item.signatories }}</td>
+            <td class="font-weight-bold text-left">{{ item.role }}</td>
+            <td class="font-weight-bold">{{ item.minimum }}</td>
+            <td class="font-weight-bold">{{ item.maximum }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </v-card>
   </v-col>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
+const errorMessage = ref(null);
+const maxViolated = ref(false);
 const expandedPanel = ref(0);
+const roles = ref([
+  {
+    zone: "Meydan Freezone",
+    roles: [
+      {
+        role: "Manager",
+        minimum: 1,
+        maximum: 1,
+      },
+      {
+        role: "Director",
+        minimum: 1,
+        maximum: 4,
+        signatories: "Signatories",
+      },
+      {
+        role: "Shareholders",
+        minimum: 1,
+        maximum: 50,
+      },
+    ],
+  },
+  {
+    zone: "IFZA",
+    roles: [
+      {
+        role: "Manager",
+        minimum: 1,
+        maximum: 1,
+      },
+      {
+        role: "Director",
+        minimum: 1,
+        maximum: 4,
+        signatories: "Signatories",
+      },
+      {
+        role: "Shareholders",
+        minimum: 1,
+        maximum: 10,
+      },
+    ],
+  },
+  {
+    zone: "SHAMS",
+    roles: [
+      {
+        role: "Manager",
+        minimum: 1,
+        maximum: 3,
+      },
+      {
+        role: "Director",
+        minimum: 1,
+        maximum: 3,
+        signatories: "Signatories",
+      },
+      {
+        role: "Shareholders",
+        minimum: 1,
+        maximum: 50,
+      },
+    ],
+  },
+  {
+    zone: "RAKEZ",
+    roles: [
+      {
+        role: "Manager",
+        minimum: 1,
+        maximum: 3,
+      },
+      {
+        role: "Director",
+        minimum: 1,
+        maximum: 3,
+        signatories: "Signatories",
+      },
+      {
+        role: "Shareholders",
+        minimum: 1,
+        maximum: 50,
+      },
+    ],
+  },
+]);
+const getZoneData = () => {
+  if (!roles.value) {
+    return [];
+  }
+  return roles.value.find((item) => item.zone === "IFZA");
+};
+const displayRoles = () => {
+  if (!roles.value || !this.getZoneData) {
+    return [];
+  }
+  return this.roles.find((item) => item.zone === "IFZA");
+};
 
 const companyDetails = ref({
   companyDetails: {
@@ -333,4 +464,87 @@ const companyDetails = ref({
     },
   ],
 });
+const signatoriesData = ref({
+  manager: 2,
+  shareholders: 10,
+  director: 1,
+});
+
+const checkMax = () => {
+  let selectedZone = "IFZA";
+
+  if (selectedZone === "IFZA") {
+    const { manager, shareholders, director } = signatoriesData.value;
+
+    if (manager > 1) {
+      maxViolated.value = true;
+      errorMessage.value = "Maximum number of managers exceeded for IFZA zone.";
+      console.log("Maximum number of managers exceeded for IFZA zone.");
+    }
+
+    if (shareholders > 10) {
+      maxViolated.value = true;
+
+      errorMessage.value =
+        "Maximum number of shareholders exceeded for IFZA zone.";
+      console.log("Maximum number of shareholders exceeded for IFZA zone.");
+    }
+
+    if (director > 1) {
+      maxViolated.value = true;
+
+      errorMessage.value =
+        "Maximum number of directors exceeded for IFZA zone.";
+      console.log("Maximum number of directors exceeded for IFZA zone.");
+    }
+  }
+};
 </script>
+
+<style>
+.table-container {
+  max-height: 400px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}
+
+table {
+  /* border-collapse: collapse; */
+  width: 60%;
+}
+
+th,
+td {
+  /* border: 1px solid #dddddd; */
+  text-align: center;
+  padding: 8px;
+  max-width: 150px; /* Adjust the maximum width as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td.action {
+  max-width: 100px; /* Adjust the maximum width for action column */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.no-padding .v-input {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
