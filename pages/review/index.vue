@@ -16,51 +16,81 @@
       <v-expansion-panels v-model="expandedPanel" class="" variant="accordion">
         <v-expansion-panel>
           <template #title>
-            <span style="font-weight: bold">Company Details</span>
+            <span style="font-weight: bold"
+              ><v-icon class="mr-4">mdi-alarm-panel-outline</v-icon>Company
+              Details</span
+            >
           </template>
           <v-expansion-panel-text>
             <v-card
               max-width="1000"
-              variant="outlined"
+              variant="outline"
               elevation="0"
-              class="mx-auto justify-center px-8 pa-8 mt-8"
+              class="mx-auto justify-center pa-4"
             >
               <h3 class="text-center text-h5 font-weight-bold">
-                Company details
+                <!-- <v-icon icon="mdi-check-circle"></v-icon> -->
               </h3>
-              <v-divider class="pb-8"> </v-divider>
-              <v-row>
-                <v-col>
-                  <v-row class="text-h6 font-weight-bold">
-                    Company name (English):
-                    <span class="font-weight-light ml-3">Shelby LTD</span>
+              <!-- <v-divider class="pb-8"> </v-divider> -->
+              <v-row dense class="no-gutters">
+                <v-col class="no-gutters">
+                  <v-row class="text-h6 font-weight-bold text-medium-emphasis">
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-account</v-icon>
+                      <span class="font-weight-bold"> Name: </span>
+                      Shelby LTD, Shelby Limited</span
+                    >
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Company name (Arabic):
-                    <span class="font-weight-light ml-3">Shelby LTD</span>
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-abjad-arabic</v-icon>
+                      <span class="font-weight-bold"> Name: </span>
+                      Shelby LTD</span
+                    >
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Company URL:
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-link</v-icon>
+                      <span class="font-weight-bold">URL </span>
+                    </span>
                     <span class="font-weight-light ml-3">
                       http://www.localhost.com</span
                     >
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Visa Allocation(s) :
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-passport-biometric</v-icon>
+                      <span class="font-weight-bold">
+                        Visa Allocation(s) :
+                      </span>
+                    </span>
+
                     <span class="font-weight-light ml-3"> 50 slots</span>
                   </v-row>
                 </v-col>
-                <v-col>
+                <v-col class="no-gutters">
                   <v-row class="text-h6 font-weight-bold">
-                    Shareholders:
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-account-multiple-check</v-icon>
+                      <span class="font-weight-bold"> Shareholders: </span>
+                    </span>
+
                     <span class="font-weight-light ml-3">24</span>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Share Capital:
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-cash-multiple</v-icon>
+                      <span class="font-weight-bold"> Share Capital:</span>
+                    </span>
+
                     <span class="font-weight-light ml-3">AED 2000</span>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Estimated turnover:
+                    <span class="font-weight-light ml-3 text-medium-emphasis">
+                      <v-icon class="mr-4">mdi-cash-refund</v-icon>
+                      <span class="font-weight-bold"> Estimated turnover:</span>
+                    </span>
+
                     <span class="font-weight-light ml-3"> AED 63100</span>
                   </v-row>
                 </v-col>
@@ -70,7 +100,10 @@
         </v-expansion-panel>
         <v-expansion-panel>
           <template #title>
-            <span style="font-weight: bold">Supplier Markets</span>
+            <span style="font-weight: bold">
+              <v-icon class="mr-4">mdi-shopping-outline</v-icon> Supplier
+              Markets</span
+            >
           </template>
           <v-expansion-panel-text>
             <v-card
@@ -146,7 +179,9 @@
         </v-expansion-panel>
         <v-expansion-panel>
           <template #title>
-            <span style="font-weight: bold">Packages</span>
+            <span style="font-weight: bold"
+              ><v-icon class="mr-4">mdi mdi-gift</v-icon> Packages</span
+            >
           </template>
           <v-expansion-panel-text>
             <v-card
@@ -186,7 +221,8 @@
         </v-expansion-panel>
         <v-expansion-panel>
           <template #title>
-            <span style="font-weight: bold">Signatories </span>
+            <v-icon class="mr-4">mdi-account-group</v-icon>
+            <span style="font-weight: bold"> Signatories </span>
           </template>
           <v-expansion-panel-text>
             <v-list lines="one">
