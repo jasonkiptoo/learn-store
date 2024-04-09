@@ -184,53 +184,26 @@
             </v-card>
           </v-expansion-panel-text>
         </v-expansion-panel>
+        <v-expansion-panel>
+          <template #title>
+            <span style="font-weight: bold">Signatories </span>
+          </template>
+          <v-expansion-panel-text>
+            <v-list lines="one">
+              <v-list-item
+                v-for="n in 3"
+                :key="n"
+                :title="'John Doe ' + n"
+                subtitle="Manager"
+                prepend-avatar="https://randomuser.me/api/portraits/women/8.jpg"
+              >
+              </v-list-item>
+              <!-- :prepend-avatar="https://randomuser.me/api/portraits/women/8.jpg" -->
+            </v-list>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
       </v-expansion-panels>
     </v-card>
-    <!-- <v-card
-      max-width="1000"
-      variant="outlined"
-      elevation="0"
-      class="mx-auto justify-center px-8 pa-8 mt-8"
-    >
-      <h3 class="text-center text-h5 font-weight-bold">Company details</h3>
-      <v-divider class="pb-8"> </v-divider>
-      <v-row>
-        <v-col>
-          <v-row class="text-h6 font-weight-bold">
-            Company name (English):
-            <span class="font-weight-light ml-3">Shelby LTD</span>
-          </v-row>
-          <v-row class="text-h6 font-weight-bold">
-            Company name (Arabic):
-            <span class="font-weight-light ml-3">Shelby LTD</span>
-          </v-row>
-          <v-row class="text-h6 font-weight-bold">
-            Company URL:
-            <span class="font-weight-light ml-3">
-              http://www.localhost.com</span
-            >
-          </v-row>
-          <v-row class="text-h6 font-weight-bold">
-            Visa Allocation(s) :
-            <span class="font-weight-light ml-3"> 50 slots</span>
-          </v-row>
-        </v-col>
-        <v-col>
-          <v-row class="text-h6 font-weight-bold">
-            Shareholders:
-            <span class="font-weight-light ml-3">24</span>
-          </v-row>
-          <v-row class="text-h6 font-weight-bold">
-            Share Capital:
-            <span class="font-weight-light ml-3">AED 2000</span>
-          </v-row>
-          <v-row class="text-h6 font-weight-bold">
-            Estimated turnover:
-            <span class="font-weight-light ml-3"> AED 63100</span>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-card> -->
   </v-col>
 </template>
 
