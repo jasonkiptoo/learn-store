@@ -79,10 +79,10 @@ const items = ref([
     ],
   },
   {
-    label: "Contact",
+    label: "Review Information",
     icon: "pi pi-envelope",
     badge: 3,
-    to: "/contact",
+    to: "/review",
   },
 ]);
 </script>

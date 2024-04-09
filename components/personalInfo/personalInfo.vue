@@ -97,7 +97,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { useApplicationStore } from "@/store/store.js";
+import { useApplicationStore } from "@/store/store.ts";
 
 const appStore = useApplicationStore();
 const formData = ref({
@@ -112,7 +112,7 @@ const formData = ref({
   ethnicity: "",
   comments: "",
 });
-
+// method to calculate age
 const calculateAge = (dob) => {
   if (!dob) return "";
 
