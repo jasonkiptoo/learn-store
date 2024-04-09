@@ -38,8 +38,10 @@
                     <span class="font-weight-light ml-3 text-medium-emphasis">
                       <v-icon class="mr-4">mdi-account</v-icon>
                       <span class="font-weight-bold"> Name: </span>
-                      Shelby LTD, Shelby Limited</span
-                    >
+                      <span v-for="item in companyDetails">
+                        {{ item.name }}
+                      </span>
+                    </span>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
                     <span class="font-weight-light ml-3 text-medium-emphasis">
@@ -54,7 +56,7 @@
                       <span class="font-weight-bold">URL </span>
                     </span>
                     <span class="font-weight-light ml-3">
-                      http://www.localhost.com</span
+                      {{ companyDetails.companyDetails.url }}</span
                     >
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
@@ -65,7 +67,12 @@
                       </span>
                     </span>
 
-                    <span class="font-weight-light ml-3"> 50 slots</span>
+                    <span class="font-weight-light ml-3">
+                      {{
+                        companyDetails.companyDetails.visaAllocations
+                      }}
+                      slots</span
+                    >
                   </v-row>
                 </v-col>
                 <v-col class="no-gutters">
@@ -75,7 +82,9 @@
                       <span class="font-weight-bold"> Shareholders: </span>
                     </span>
 
-                    <span class="font-weight-light ml-3">24</span>
+                    <span class="font-weight-light ml-3">{{
+                      companyDetails.companyDetails.shareholders
+                    }}</span>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
                     <span class="font-weight-light ml-3 text-medium-emphasis">
@@ -83,7 +92,10 @@
                       <span class="font-weight-bold"> Share Capital:</span>
                     </span>
 
-                    <span class="font-weight-light ml-3">AED 2000</span>
+                    <span class="font-weight-light ml-3"
+                      >AED
+                      {{ companyDetails.companyDetails.shareCapital }}</span
+                    >
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
                     <span class="font-weight-light ml-3 text-medium-emphasis">
@@ -91,7 +103,12 @@
                       <span class="font-weight-bold"> Estimated turnover:</span>
                     </span>
 
-                    <span class="font-weight-light ml-3"> AED 63100</span>
+                    <span class="font-weight-light ml-3">
+                      AED
+                      {{
+                        companyDetails.companyDetails.estimatedTurnover
+                      }}</span
+                    >
                   </v-row>
                 </v-col>
               </v-row>
@@ -261,20 +278,59 @@ import { ref } from "vue";
 
 const expandedPanel = ref(0);
 
-const companyDetails = {
-  englishNames: ["English Name 1", "English Name 2", "English Name 3"],
-  arabicNames: ["Arabic Name 1", "Arabic Name 2", "Arabic Name 3"],
-  visaAllocationNumber: "XXXXXXXX",
-  companyWebsiteURL: "www.example.com",
-  sharedCapitalInfo: "$XXXXXX",
-  estimatedTurnover: "$XXXXXX",
-  keyMarkets: ["Market 1", "Market 2", "Market 3", "Market 4", "Market 5"],
-  suppliers: [
-    "Supplier 1",
-    "Supplier 2",
-    "Supplier 3",
-    "Supplier 4",
-    "Supplier 5",
+const companyDetails = ref({
+  companyDetails: {
+    name: [" Shelby LTD", "Shelby Limited"],
+    alternativeName: "Shelby LTD",
+    url: "http://www.localhost.com",
+    visaAllocations: "50 slots",
+    shareholders: 24,
+    shareCapital: "AED 2000",
+    estimatedTurnover: "AED 63100",
+  },
+  supplierMarkets: {
+    keyMarketsForService: [
+      "Market 1",
+      "Market 2",
+      "Market 3",
+      "Market 4",
+      "Market 5",
+    ],
+    supplierMarkets: [
+      "Market 1",
+      "Market 2",
+      "Market 3",
+      "Market 4",
+      "Market 5",
+    ],
+    companyActivities: [
+      "Imitation Jewellery Smithing",
+      "3D Printing Products Production",
+      "Buses & Trucks Trading",
+    ],
+  },
+  packages: {
+    emirate: "Dubai",
+    zone: "SHAMS",
+    selectedPackage: "2 Visa allocations",
+    visa: "1 Employement Visa & 1 Investor Visa",
+  },
+  signatories: [
+    {
+      name: "John Doe 1",
+      role: "Manager",
+      avatar: "https://randomuser.me/api/portraits/women/8.jpg",
+    },
+    {
+      name: "John Doe 2",
+      role: "Manager",
+      avatar: "https://randomuser.me/api/portraits/women/8.jpg",
+    },
+    {
+      name: "John Doe 3",
+      role: "Manager",
+      avatar: "https://randomuser.me/api/portraits/women/8.jpg",
+    },
   ],
-};
+});
 </script>
