@@ -193,15 +193,25 @@
               <v-row>
                 <v-col>
                   <v-row class="text-h6 font-weight-bold">
-                    Emirate:
+                    <span class="font-weight-light">
+                      <v-icon>mdi-lightbulb-group-outline</v-icon>
+
+                      Emirate:
+                    </span>
                     <span class="font-weight-light ml-3">Dubai</span>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Zone:
+                    <span class="font-weight-light">
+                      <v-icon>mdi-map-clock-outline</v-icon>
+                      Zone:
+                    </span>
                     <span class="font-weight-light ml-3">SHAMS</span>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    Selected Package :
+                    <span>
+                      <v-icon>mdi-gift-open-outline</v-icon>
+                      Selected Package :
+                    </span>
                     <span class="font-weight-light ml-3">
                       2 Visa allocations</span
                     >
@@ -209,7 +219,10 @@
                 </v-col>
                 <v-col>
                   <v-row class="text-h6 font-weight-bold">
-                    Visa :
+                    <span>
+                      <v-icon>mdi-passport</v-icon>
+                      Visa :
+                    </span>
                     <span class="font-weight-light ml-3">
                       1 Employement Visa & 1 Investor Visa
                     </span>
@@ -246,7 +259,7 @@
 <script setup>
 import { ref } from "vue";
 
-const expandedPanel = ref(2);
+const expandedPanel = ref(0);
 
 const companyDetails = {
   englishNames: ["English Name 1", "English Name 2", "English Name 3"],
