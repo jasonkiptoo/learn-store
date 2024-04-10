@@ -161,9 +161,9 @@
                 <h3 class="font-weight-bold d-flex justify-cente">
                   Key markets for Service
                 </h3>
-                <v-divider class="mb-8"></v-divider>
+                <v-divider class="mb-4"></v-divider>
 
-                <ul class="" style="list-style-type: circle">
+                <ul class="d-fle" style="list-style-type: circle">
                   <li>Market 1</li>
                   <li>Market 2</li>
                   <li>Market 3</li>
@@ -171,17 +171,16 @@
                   <li>Market 5</li>
                 </ul>
               </v-card>
-              <v-divider class="border-opacity-100" vertical></v-divider>
               <v-card
                 variant="outlined"
                 elevation="0"
                 class="mt-8 pa-8"
                 max-width="800"
               >
-                <v-card-title class="font-weight-bold d-flex justify-cente"
+                <h3 class="font-weight-bold"
                   >Supplier Markets
-                </v-card-title>
-                <v-divider class="mb-8"></v-divider>
+                </h3>
+                <v-divider class="mb-4"></v-divider>
 
                 <ul class="" style="list-style-type: circle">
                   <li>Market 1</li>
@@ -198,9 +197,9 @@
                 class="mt-8 pa-8"
                 max-width="800"
               >
-                <v-card-title class="font-weight-bold d-flex justify-cente"
+                <h3 class="font-weight-bold d-flex justify-cente"
                   >Company Activities
-                </v-card-title>
+                </h3>
                 <v-divider class="mb-8"></v-divider>
 
                 <ul style="list-style-type: circle" lass="">
