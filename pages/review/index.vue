@@ -214,6 +214,7 @@
                     <div class="name text-h6 font-weight-black">Dubai</div>
                   </div>
                 </v-col>
+                <v-divider thickness="12" vertical></v-divider>
                 <v-col>
                   <div class="cont text-body-2 d-fle align-center">
                     <div class="ic d-flex align-center">
@@ -223,6 +224,8 @@
                     <div class="name text-h6 font-weight-black">Meydan Zone</div>
                   </div>
                 </v-col>
+                <v-divider thickness="12" color="warning" vertical></v-divider>
+
 
                 <v-col>
                   <div class="cont text-body-2 d-fle align-center">
@@ -233,6 +236,8 @@
                     <div class="name text-h6 font-weight-black">2 Visa allocations</div>
                   </div>
                 </v-col>
+                <v-divider inset thickness="12" color="warning" vertical></v-divider>
+
 
                 <v-col>
                   <div class="cont text-body-2 d-fle align-center">
@@ -240,7 +245,8 @@
                       <v-icon class="mr-4">mdi-passport</v-icon>
                       <h3 class="text-medium-emphasis">Visa package</h3>
                     </div>
-                    <div class="name text-h6 font-weight-black">1 Employement Visa & 1 Investor Visa</div>
+                    <div class="name font-weight-black">2 Employement Visa (s)</div>
+                    <div class="name font-weight-black">1 Investor Visa</div>
                   </div>
                 </v-col>
 
@@ -258,11 +264,11 @@
           <v-expansion-panel-text>
             <v-list lines="one">
               <v-list-item
-                v-for="n in 3"
+                v-for="n in companyDetails.signatories"
                 :key="n"
-                :title="'John Doe ' + n"
-                subtitle="Manager"
-                prepend-avatar="https://randomuser.me/api/portraits/women/8.jpg"
+                :title="n.name"
+                :subtitle="n.role"
+                :prepend-avatar="n.avatar"
               >
               </v-list-item>
               <!-- :prepend-avatar="https://randomuser.me/api/portraits/women/8.jpg" -->
@@ -455,18 +461,18 @@ const companyDetails = ref({
   },
   signatories: [
     {
-      name: "John Doe 1",
+      name: "Avila Johnes",
       role: "Manager",
       avatar: "https://randomuser.me/api/portraits/women/8.jpg",
     },
     {
-      name: "John Doe 2",
-      role: "Manager",
+      name: "maruki Suziki",
+      role: "Director",
       avatar: "https://randomuser.me/api/portraits/women/8.jpg",
     },
     {
-      name: "John Doe 3",
-      role: "Manager",
+      name: "Angel Akii",
+      role: "Share Holder",
       avatar: "https://randomuser.me/api/portraits/women/8.jpg",
     },
   ],
