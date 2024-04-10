@@ -32,82 +32,102 @@
                 <!-- <v-icon icon="mdi-check-circle"></v-icon> -->
               </h3>
               <!-- <v-divider class="pb-8"> </v-divider> -->
-              <v-row dense class="no-gutters">
-                <v-col class="no-gutters">
-                  <v-row class="text-h6 font-weight-bold text-medium-emphasis">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-account</v-icon>
-                      <span class="font-weight-bold"> Name: </span>
-                      <span v-for="item in companyDetails">
-                        {{ item.name }}
-                      </span>
-                    </span>
+              <v-row  class="no-utters">
+                <v-col class="no-gtters "  style="display: flex; flex-direction: column; gap: 1rem ;">
+                  <v-row class="text-h6 font-weight-bold ">
+                    <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center text-medium-emphasis" >
+                        <v-icon class="mr-4">mdi-account</v-icon>
+                        <h3 class="text-h" >
+                          Name (English)
+                        </h3>
+                      </div>
+                      <div class="name font-weight-black">
+                        {{ formarted }} 
+                      </div> 
+                    </div>
                   </v-row>
                   <v-row class="text-h6 font-weight-bold">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-abjad-arabic</v-icon>
-                      <span class="font-weight-bold"> Name: </span>
-                      Shelby LTD</span
-                    >
-                  </v-row>
-                  <v-row class="text-h6 font-weight-bold">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-link</v-icon>
-                      <span class="font-weight-bold">URL </span>
-                    </span>
-                    <span class="font-weight-light ml-3">
-                      {{ companyDetails.companyDetails.url }}</span
-                    >
-                  </v-row>
-                  <v-row class="text-h6 font-weight-bold">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-passport-biometric</v-icon>
-                      <span class="font-weight-bold">
-                        Visa Allocation(s) :
-                      </span>
-                    </span>
 
-                    <span class="font-weight-light ml-3">
-                      {{ companyDetails.companyDetails.visaAllocations }}
-                      slots</span
-                    >
+                    <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center" >
+                        <v-icon class="mr-4">mdi-abjad-arabic</v-icon>
+                        <h3 class="text-medium-emphasis text-h ">
+                          Name (Arabic)
+                        </h3>
+                      </div>
+                      <div class="font-weight-bold ">
+                        {{ formarted }} 
+                      </div> 
+                    </div>
+                  </v-row>
+                  <v-row class="text-h6 ">
+                    <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center text-medium-empassis" >
+                        <v-icon class="mr-4">mdi-link</v-icon>
+                        <h3 class="text-medium-emphasis">
+                         Website URL
+                        </h3>
+                      </div>
+                      <div class="name font-weight-bold">
+                        {{ companyDetails.companyDetails.url  }} 
+                      </div> 
+                    </div>
+                  </v-row>
+                  <v-row class="text-h6 font-weight-bold">
+                    <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center" >
+                        <v-icon class="mr-4">mdi-passport-biometric</v-icon>
+                        <h3 class="text-medium-emphasis" >
+                          Visa Allocation(s) :
+                        </h3>
+                      </div>
+                      <div class="name font-weight-bold">
+                        {{ companyDetails.companyDetails.url  }} 
+                      </div> 
+                    </div>
                   </v-row>
                 </v-col>
                 <v-col class="no-gutters">
-                  <v-row class="text-h6 font-weight-bold">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-account-multiple-check</v-icon>
-                      <span class="font-weight-bold"> Shareholders: </span>
-                    </span>
+                  <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center" >
+                        <v-icon class="mr-4">mdi-account-multiple-check</v-icon>
+                        <h3 class="text-medium-emphasis">
+                          Shareholders:
+                        </h3>
+                      </div>
+                      <div class="name font-weight-bold">
+                        {{ companyDetails.companyDetails.shareholders  }} 
+                      </div> 
+                    </div>
 
-                    <span class="font-weight-light ml-3">{{
-                      companyDetails.companyDetails.shareholders
-                    }}</span>
-                  </v-row>
-                  <v-row class="text-h6 font-weight-bold">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-cash-multiple</v-icon>
-                      <span class="font-weight-bold"> Share Capital:</span>
-                    </span>
+                    <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center" >
+                        <v-icon class="mr-4">mdi-cash-multiple</v-icon>
+                        <h3 class="text-medium-emphasis">
+                                                 Share Capital:
+                        </h3>
+                      </div>
+                      <div class="name font-weight-bold">
+                        {{ companyDetails.companyDetails.shareCapital  }} 
+                      </div> 
+                    </div>
 
-                    <span class="font-weight-light ml-3"
-                      >AED
-                      {{ companyDetails.companyDetails.shareCapital }}</span
-                    >
-                  </v-row>
-                  <v-row class="text-h6 font-weight-bold">
-                    <span class="font-weight-light ml-3 text-medium-emphasis">
-                      <v-icon class="mr-4">mdi-cash-refund</v-icon>
-                      <span class="font-weight-bold"> Estimated turnover:</span>
-                    </span>
+                    <div class="cont text-body-2 d-fle align-center">
+                      <div class="ic d-flex align-center" >
+                        <v-icon class="mr-4">mdi-cash-refund</v-icon>
+                        <h3 class="text-medium-emphasis">
+                          Estimated turnover:
+                        </h3>
+                      </div>
+                      <div class="name font-weight-bold ">
+                        {{ companyDetails.companyDetails.estimatedTurnover  }} 
+                      </div> 
+                    </div>
 
-                    <span class="font-weight-light ml-3">
-                      AED
-                      {{
-                        companyDetails.companyDetails.estimatedTurnover
-                      }}</span
-                    >
-                  </v-row>
+
+               
+            
                 </v-col>
               </v-row>
             </v-card>
@@ -122,7 +142,7 @@
           </template>
           <v-expansion-panel-text>
             <v-card
-              variant="outlined"
+              variant="outlind"
               elevation="0"
               class="mx-auto flex-wrap pa-3"
               style="
@@ -133,9 +153,9 @@
               "
             >
               <v-card
-                variant="outline"
+                variant="outlined"
                 elevation="0"
-                class="mt-8 pa-8"
+                class="mt-8 pa-8 d-fle"
                 max-width="800"
               >
                 <h3 class="font-weight-bold d-flex justify-cente">
@@ -153,7 +173,7 @@
               </v-card>
               <v-divider class="border-opacity-100" vertical></v-divider>
               <v-card
-                variant="outline"
+                variant="outlined"
                 elevation="0"
                 class="mt-8 pa-8"
                 max-width="800"
@@ -173,7 +193,7 @@
               </v-card>
               <v-divider vertical></v-divider>
               <v-card
-                variant="outline"
+                variant="outlined"
                 elevation="0"
                 class="mt-8 pa-8"
                 max-width="800"
@@ -402,6 +422,11 @@ const getZoneData = () => {
   }
   return roles.value.find((item) => item.zone === "IFZA");
 };
+const formarted=computed(()=>{
+
+  let names = companyDetails.value.companyDetails.name
+  return names.join(',')
+})
 const displayRoles = () => {
   if (!roles.value || !this.getZoneData) {
     return [];
