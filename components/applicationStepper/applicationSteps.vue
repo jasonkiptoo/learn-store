@@ -2,7 +2,6 @@
     <Card>
         <template #content>
 
-
             <Stepper linear>
                 <StepperPanel header="Personal Info">
                     <template #content="{ nextCallback }">

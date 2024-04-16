@@ -491,8 +491,15 @@ const checkMax = () => {
 
     if (manager > 1) {
       maxViolated.value = true;
+
+      setTimeout(() => {
+      maxViolated.value = false;
+      errorMessage.value=""
+        
+      }, 3000);
       errorMessage.value = "Maximum number of managers exceeded for IFZA zone.";
       console.log("Maximum number of managers exceeded for IFZA zone.");
+      return
     }
 
     if (shareholders > 10) {
